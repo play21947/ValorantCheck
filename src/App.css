@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App-logo {
@@ -34,5 +36,229 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  width: 300px;
+  height: 400px;
+  color: white;
+  padding: 20;
+  border-radius: 8px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.card:hover{
+  box-shadow: 5px 10px rgb(100, 100, 100);
+  transition-duration: 0.3s;
+  transform: scale(1.05);
+}
+
+
+.card-animated{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  width: 300px;
+  height: 400px;
+  color: white;
+  padding: 20;
+  border-radius: 8px;
+  animation: shake 0.6s;
+  animation-iteration-count: infinite;
+}
+
+.img-container-close{
+  transition-duration: 0.6s;
+  opacity: 0;
+}
+
+.img-container-open{
+  transition-duration: 0.6s;
+  opacity: 1;
+}
+
+
+.refresh-btn{
+  border: 0px;
+  width: 300px;
+  height: 100px;
+  margin-top: 100px;
+  border-radius: 8px;
+  background-color: mediumseagreen;
+  cursor: pointer;
+}
+
+.refresh-btn p{
+  font-size: 26px;
+}
+
+.refresh-btn:hover{
+  background-color: rgb(184, 184, 184);
+}
+
+
+
+.flip-card{
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+
+.flip-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner{
+  transform: rotateY(180deg);
+}
+
+.front-card, .back-card{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front-card{
+  background-color: red;
+}
+
+.back-card{
+  transform: rotateY(180deg)
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+.Two-img-noob{
+  border: 3px solid white;
+  width: 200px;
+  position: absolute;
+  border-radius: 200px;
+  box-shadow: 5px 5px 10px white;
+}
+
+
+.Two-img-rookie{
+  border: 3px solid cyan;
+  width: 200px;
+  position: absolute;
+  border-radius: 200px;
+  box-shadow: 5px 5px 10px cyan;
+}
+
+
+.Two-img-good{
+  border: 3px solid rgb(104, 16, 185);
+  width: 200px;
+  position: absolute;
+  border-radius: 200px;
+  box-shadow: 5px 5px 10px rgb(104, 16, 185);
+}
+
+.Two-img-ace{
+  border: 3px solid rgb(233, 219, 27);
+  width: 200px;
+  position: absolute;
+  border-radius: 200px;
+  box-shadow: 5px 5px 10px rgb(233, 219, 27);
+}
+
+
+.loader {
+  position: absolute;
+  left: 48%;
+  right: 50%;
+  top: 50%;
+  border: 10px solid mediumseagreen;
+  border-top: 10px solid transparent;
+  border-radius: 100px;
+  width: 80px;
+  height: 80px;
+  animation: spin 0.6s infinite;
+  z-index: 1;
+}
+
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+@media only screen and (max-width: 1800px) {
+  .container{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 1580px) {
+  .container{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 1260px) {
+  .container{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .container{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container{
+    display: grid;
+
+    grid-template-columns: 1fr;
   }
 }
